@@ -1,0 +1,11 @@
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="OK">
+</form>
+
+{% if msg %}
+    {{ msg | json_script:'msg'}}
+    <p>이름 : {{ msg.name }} </p>
+    <p>나이 : {{ msg.age }} </p>
+{% endif %}
